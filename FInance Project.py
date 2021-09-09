@@ -7,10 +7,6 @@ import datetime
 import seaborn as sns
 sns.set_style('whitegrid')
 
-#import plotly
-#import cufflinks as cf
-#cf.go_offline()
-
 ## Data
 
 # We need to get data using pandas datareader.We will get stock information for the following banks:
@@ -76,8 +72,7 @@ print(bank_stocks.head())
 max_close_price = bank_stocks.xs(key='Close', axis=1, level='Stock Info').max()
 print(max_close_price)
 
-##** Create a new empty DataFrame called returns.This dataframe will contain the returns for each bank's stock.
-# returns are typically defined by:**$$r_t = \frac{p_t - p_{t-1}}{p_{t-1}} = \frac{p_t}{p_{t-1}} - 1$$
+##** Create a new empty DataFrame called returns.
 
 returns = pd.DataFrame()
 
@@ -128,9 +123,7 @@ sns.distplot(returns.loc['2008-01-01':'2008-12-31']['C Return'], color='red', bi
 plt.show()
 
 
-##** Create a line plot showing Close price for each bank for the entire index of time.(Hint: Try using a for loop,
-# or use[.xs](http://pandas.pydata.org / pandas - docs / stable / generated / pandas.DataFrame.xs.html) to get a cross
-# section of the data.) **
+##** Create a line plot showing Close price for each bank for the entire index of time.
 
 bank_stocks.xs(key='Close', axis=1, level='Stock Info').plot(figsize=(12, 4), label='tick')
 plt.show()
@@ -161,23 +154,3 @@ plt.show()
 
 sns.clustermap(bank_stocks.xs(key='Close', axis=1, level='Stock Info').corr(), annot=True, cmap='coolwarm')
 plt.show()
-
-# # Part 2
-#
-# ##** Use.iplot(kind='candle) to create a candle plot of Bank of America's stock from Jan 1st 2015 to Jan 1st 2016. **
-#
-# BAC[['Open', 'High', 'Low', 'Close']].loc['2015-01-01':'2016-01-01'].iplot(kind='candle')
-# plot.show()
-#
-# ##** Use.ta_plot(study='sma') to create a Simple Moving Averages plot of Morgan Stanley for the year 2015. **
-#
-# MS['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='sma',periods=[13,21,55],title='Simple Moving Averages')
-#
-# ##** Use.ta_plot(study='boll') to create a Bollinger Band Plot for Bank of America for the year 2015. **
-#
-# BAC['Close'].ix['2015-01-01':'2016-01-01'].ta_plot(study='boll')
-
-# Great Job!
-
-##Definitely a lot of more specific finance topics here, so don't worry if you didn't understand them all! The only
-# thing you should be concerned with understanding are the basic pandas and visualization oeprations.
