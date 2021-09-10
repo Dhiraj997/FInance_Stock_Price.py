@@ -451,7 +451,7 @@ sns.pairplot(returns[1:])
 
 
     
-![png](output_21_1.png)
+![](Stock_EDA_file/output_21_1.png)
     
 
 
@@ -565,7 +565,7 @@ sns.distplot(returns.loc['2015-01-01':'2015-12-31']['MS Return'],color='green',b
 
 
     
-![png](output_31_2.png)
+![](Stock_EDA_file/output_31_2.png)
     
 
 
@@ -591,7 +591,7 @@ sns.distplot(returns.loc['2008-01-01':'2008-12-31']['C Return'],color='red',bins
 
 
     
-![png](output_33_2.png)
+![](Stock_EDA_file/output_33_2.png)
     
 
 
@@ -628,7 +628,7 @@ plt.legend()
 
 
     
-![png](output_37_1.png)
+![](Stock_EDA_file/output_37_1.png)
     
 
 
@@ -646,7 +646,7 @@ bank_stocks.xs(key='Close',axis=1,level='Stock Info').plot()
 
 
     
-![png](output_38_1.png)
+![](Stock_EDA_file/output_38_1.png)
     
 
 
@@ -665,7 +665,7 @@ bank_stocks.xs(key='Close',axis=1,level='Stock Info').plot()
 
 
     
-![png](output_39_1.png)
+![](Stock_EDA_file/output_39_1.png)
     
 
 
@@ -692,7 +692,7 @@ plt.legend()
 
 
     
-![png](output_41_1.png)
+![](Stock_EDA_file/output_41_1.png)
     
 
 
@@ -712,7 +712,7 @@ sns.heatmap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),annot=T
 
 
     
-![png](output_43_1.png)
+![](Stock_EDA_file/output_43_1.png)
     
 
 
@@ -732,6 +732,6 @@ sns.clustermap(bank_stocks.xs(key='Close',axis=1,level='Stock Info').corr(),anno
 
 
     
-![png](output_45_1.png)
+![](Stock_EDA_file/output_45_1.png)
     
 
